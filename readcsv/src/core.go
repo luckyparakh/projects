@@ -75,7 +75,7 @@ func (c *Core) ReadUI() {
 			}
 		case errV := <-errC:
 			exit(errV)
-		case <-time.After(time.Duration(c.timer) * time.Second):
+		case <-time.After(time.Duration(c.timer) * time.Second): // can use timer package also
 			fmt.Println("Timeout")
 		}
 	}
